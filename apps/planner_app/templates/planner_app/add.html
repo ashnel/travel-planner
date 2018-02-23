@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add A Trip</title>
+</head>
+<body>
+    <h1>Add a Trip</h1>
+    <a href='travels/dashboard'>Home</a> |
+    <a href='logout'>Logout</a>
+    <br>
+    <br>
+    <form action='{% url "my_create" %}' method='post'>
+        {% csrf_token %}
+        <input type='hidden' name='formtype' value='travel_submit' />
+        Destination: <input type='text' name='destination'><br>
+        Description: <input type='text' name='desc'><br>
+        Travel Date From: <input type='date' name='travel_from'><br>
+        Travel Date To: <input type='date' name='travel_to'><br>
+        <input type='submit' name='add_book' value='Add'>
+    </form>
+</body>
+</html>
